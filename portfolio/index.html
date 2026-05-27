@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cyberpunk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Rivera | Creative Web Engineer & Architect</title>
+    <meta name="description" content="Portfolio of Alex Rivera, an ultra-premium developer and designer building immersive, high-performance web experiences.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for clean aesthetic -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Custom Glowing Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <!-- Canvas Background for Particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Theme Customizer Panel -->
+    <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Open Customizer">
+        <i data-lucide="palette"></i>
+    </button>
+    <div class="theme-panel" id="theme-panel">
+        <div class="theme-panel-header">
+            <h3>Theme & Ambient</h3>
+            <button class="close-panel-btn" id="close-panel-btn" aria-label="Close Customizer">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="theme-panel-body">
+            <p class="panel-section-title">Accent Neon Glow</p>
+            <div class="theme-options">
+                <button class="theme-opt active" data-theme="cyberpunk" style="--opt-color: #a855f7;">
+                    <span class="color-preview" style="background: #a855f7;"></span> Cyberpunk
+                </button>
+                <button class="theme-opt" data-theme="aurora" style="--opt-color: #10b981;">
+                    <span class="color-preview" style="background: #10b981;"></span> Aurora Green
+                </button>
+                <button class="theme-opt" data-theme="sunset" style="--opt-color: #f97316;">
+                    <span class="color-preview" style="background: #f97316;"></span> Sunset Amber
+                </button>
+                <button class="theme-opt" data-theme="ocean" style="--opt-color: #06b6d4;">
+                    <span class="color-preview" style="background: #06b6d4;"></span> Ocean Breeze
+                </button>
+            </div>
+
+            <p class="panel-section-title">Particle Settings</p>
+            <div class="slider-control">
+                <label for="particle-count">Density</label>
+                <input type="range" id="particle-count" min="20" max="150" value="80">
+            </div>
+            <div class="slider-control">
+                <label for="particle-speed">Drift Speed</label>
+                <input type="range" id="particle-speed" min="1" max="10" value="4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-accent">&lt;</span>AR<span class="logo-accent">.</span>dev<span class="logo-accent">/&gt;</span>
+        </div>
+        <nav class="nav">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Work</a>
+            <a href="#experience" class="nav-link">Timeline</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-action">
+            <a href="#contact" class="btn btn-outline btn-sm magnetic">
+                <span>Hire Me</span>
+            </a>
+        </div>
+        <button class="mobile-nav-toggle" aria-label="Toggle Menu">
+            <i data-lucide="menu"></i>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+        <nav class="mobile-nav">
+            <a href="#hero" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#projects" class="mobile-nav-link">Work</a>
+            <a href="#experience" class="mobile-nav-link">Timeline</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-badge reveal-item">
+                    <span class="badge-dot"></span> Available for Premium Projects
+                </div>
+                <h1 class="hero-title reveal-item">
+                    Designing & Engineering <br>
+                    <span class="neon-text typing-text" id="typing-target">Digital Spaces</span>
+                </h1>
+                <p class="hero-description reveal-item">
+                    I build ultra-high-performance web solutions at the intersection of creative graphics, modern layout design, and clean backend architecture. 
+                </p>
+                <div class="hero-actions reveal-item">
+                    <a href="#projects" class="btn btn-primary magnetic">
+                        <span>Explore Work</span>
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-ghost magnetic">
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse-icon">
+                    <span class="wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-number">01.</span> About Me</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="paragraph">
+                        Hello! My name is <strong class="color-highlight">Yash</strong>, and I thrive on creating web applications that look visually stunning and load instantly. My passion for engineering started with tweaking game interfaces, which quickly evolved into building complex full-stack web architectures.
+                    </p>
+                    <p class="paragraph">
+                        Today, I focus on crafting experiences that blend complex mathematical animations with strict systems logic. I bridge the gap between creative visual design and highly structured systems backend.
+                    </p>
+                    <p class="paragraph">
+                        Here are a few core competencies I've been mastering recently:
+                    </p>
+                    
+                    <div class="skills-showcase">
+                        <div class="skill-category">
+                            <span class="skill-category-title"><i data-lucide="layout"></i> Creative Frontend</span>
+                            <div class="skill-tags">
+                                <span>React & Next.js</span>
+                                <span>JavaScript</span>
+                                <span>WebGL / Three.js</span>
+                                <span>CSS/SCSS Variables</span>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <span class="skill-category-title"><i data-lucide="database"></i> Robust Backend</span>
+                            <div class="skill-tags">
+                                <span>Node.js</span>
+                                <span>GraphQL</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual-container">
+                    <div class="about-image-wrapper glow-card">
+                        <div class="glowing-border-element"></div>
+                        <div class="avatar-fallback">
+                            <i data-lucide="user" class="avatar-icon"></i>
+                            <div class="glowing-spheres">
+                                <div class="sphere s1"></div>
+                                <div class="sphere s2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-number">02.</span> Projects Showcase</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <p class="section-desc">
+                A highly curated collection of recent engineering works displaying creative client solutions and technical playground setups. Click to see project breakdowns.
+            </p>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glow-card" data-project="quantum-nexus">
+                    <div class="project-card-image">
+                        <div class="project-image-fallback" style="background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(0,0,0,0.8));">
+                            <i data-lucide="activity" class="fallback-img-icon"></i>
+                        </div>
+                        <div class="project-card-overlay">
+                            <span class="btn btn-sm btn-outline"><span>Explore Project</span> <i data-lucide="zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div class="project-meta">
+                            <span class="project-type">WebGL / Telemetry</span>
+                            <div class="project-links">
+                                <span class="proj-icon-link"><i data-lucide="github"></i></span>
+                                <span class="proj-icon-link"><i data-lucide="external-link"></i></span>
+                            </div>
+                        </div>
+                        <h3 class="project-card-title">EduPay</h3>
+                        <p class="project-card-desc">
+                            A real-time Paymet Software use to Pay fee on online
+                        </p>
+                        <div class="project-tags">
+                            <span>MySQL</span>
+                            <span>Node.js</span>
+                            <span>Html</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glow-card" data-project="aether-ai">
+                    <div class="project-card-image">
+                        <div class="project-image-fallback" style="background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(0,0,0,0.8));">
+                            <i data-lucide="cpu" class="fallback-img-icon"></i>
+                        </div>
+                        <div class="project-card-overlay">
+                            <span class="btn btn-sm btn-outline"><span>Explore Project</span> <i data-lucide="zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div class="project-meta">
+                            <span class="project-type">AI / Search Engine</span>
+                            <div class="project-links">
+                                <span class="proj-icon-link"><i data-lucide="github"></i></span>
+                                <span class="proj-icon-link"><i data-lucide="external-link"></i></span>
+                            </div>
+                        </div>
+                        <h3 class="project-card-title">Aether AI</h3>
+                        <p class="project-card-desc">
+                            Distributed natural language vector intelligence system leveraging transformers for automated document classification and similarity scoring.
+                        </p>
+                        <div class="project-tags">
+                            <span>Next.js</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>Qdrant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glow-card" data-project="aura-ui">
+                    <div class="project-card-image">
+                        <div class="project-image-fallback" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(0,0,0,0.8));">
+                            <i data-lucide="palette" class="fallback-img-icon"></i>
+                        </div>
+                        <div class="project-card-overlay">
+                            <span class="btn btn-sm btn-outline"><span>Explore Project</span> <i data-lucide="zoom-in"></i></span>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <div class="project-meta">
+                            <span class="project-type">Component Framework</span>
+                            <div class="project-links">
+                                <span class="proj-icon-link"><i data-lucide="github"></i></span>
+                                <span class="proj-icon-link"><i data-lucide="external-link"></i></span>
+                            </div>
+                        </div>
+                        <h3 class="project-card-title">Aura Motion UI</h3>
+                        <p class="project-card-desc">
+                            An open-source custom-crafted component framework supporting CSS-driven layout transitions, backdrop blurs, and glassmorphic designs.
+                        </p>
+                        <div class="project-tags">
+                            <span>Sass</span>
+                            <span>Web Components</span>
+                            <span>Vanilla JS</span>
+                            <span>NPM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Timeline Section -->
+        <section id="experience" class="experience-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-number">03.</span> Career History</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Timeline Line -->
+                <div class="timeline-bar"></div>
+
+                <!-- Experience Item 1 -->
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glow-card">
+                        <span class="timeline-date">2026 - Present</span>
+                        <h3 class="timeline-role">Student of S.V Polythenic Collage</h3>
+                        <h4 class="timeline-company">IT Branch</h4>
+                        <p class="timeline-desc">Established in 1953, S.V. Polytechnic College (SVPC) in Bhopal is a premier government technical institution in Madhya Pradesh, offering diploma, PG diploma, and pharmacy courses. Located on Shyamla Hills, it is approved by AICTE and affiliated with RGPV.
+                        </p>
+                     </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glow-card">
+                        <span class="timeline-date">2025</span>
+                        <h3 class="timeline-role">Crisp Bhopal</h3>
+                        <h4 class="timeline-company">Python Internship</h4>
+                        <p class="timeline-desc">CRISP Bhopal (Centre for Research and Industrial Staff Performance) is an autonomous training and skill development institute located in Bhopal, Madhya Pradesh
+                            </p>
+                </div>
+
+        
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section scroll-reveal">
+            <div class="section-header">
+                <h2 class="section-title"><span class="title-number">04.</span> Reach Out</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-heading">Let's create something extraordinary.</h3>
+                    <p class="contact-lead">
+                        I am currently open to consulting opportunities, complex UI/UX work, and speaking arrangements. Have a question or want to chat? Shoot me a message.
+                    </p>
+
+                    <div class="contact-methods">
+                        <a href="mailto:alex@rivera.dev" class="contact-method-item">
+                            <i data-lucide="mail"></i>
+                            <span>example.dev@gmail.com</span>
+                        </a>
+                        <div class="contact-method-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Bhopal</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon magnetic" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        <a href="#" class="social-icon magnetic" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-icon magnetic" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container glow-card">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <span class="input-focus-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <span class="input-focus-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Message</label>
+                            <span class="input-focus-line"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary magnetic" style="width: 100%;">
+                            <span>Initiate Transmission</span>
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="copyright">&copy; 2026 Yash Sahu . This Portfolio made in approx a year</p>
+    </footer>
+
+    <!-- Custom Popups Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-card glow-card">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Content generated dynamically via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
