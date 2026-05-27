@@ -307,16 +307,15 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const projectDb = {
         'quantum-nexus': {
-            title: 'Quantum Nexus Dashboard',
+            title: 'Edupay',
             type: 'WebGL / Spatial Telemetry',
-            client: 'Cyberdyne Systems Research',
-            timeline: '6 Months (2024)',
-            description: 'Quantum Nexus is a microsecond-granularity spatial telemetry suite built for monitoring high-density distributed data cluster architectures. It leverages advanced hardware acceleration to plot active transactions in a fully immersive web-based 3D environment, bypassing typical rendering bottlenecks.',
-            features: [
-                'Interactive WebGL topological node-graph rendering over 150,000 active nodes.',
-                'Sub-millisecond data sync handled via binary WebSocket pipelines and typed Arrays.',
-                'Custom Rust-compiled WebAssembly module for rapid coordinate calculations.',
-                'Responsive design integrating ambient canvas backdrops and neon metrics.'
+            client: 'Collage',
+            timeline: '6 Months (2026)',
+            description: 'EduPay is a web-based educational fee management system designed to simplify student fee payments, track transactions, manage records, and provide an efficient admin dashboard for institutions.',
+            features: ['Secure Student & Admin Login System. ',
+                    'Student Fee Management Dashboard',
+                    'Real-Time Payment Status Tracking',
+                    'Automatic Receipt Generation',
             ],
             tech: ['Three.js', 'Rust WASM', 'React', 'CSS Grid', 'WebSockets'],
             bgGrad: 'linear-gradient(135deg, rgba(168,85,247,0.4), rgba(8,5,16,0.95))',
